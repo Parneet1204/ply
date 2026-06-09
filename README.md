@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# PLY - Premium Glassmorphic Web Audio Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PLY is a high-fidelity, premium glassmorphic local audio player running entirely in the browser. Designed with modern aesthetics in mind, it allows users to scan local folders for audio files (`.mp3`, `.wav`), parse ID3 metadata, and play music with responsive canvas visualizers, custom equalizers, and media key integrations.
 
-Currently, two official plugins are available:
+![PLY App Mockup](https://raw.githubusercontent.com/github/docs/main/assets/images/help/repository/repo-creation.png) *Note: Replace with your actual screenshot!*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
 
-## React Compiler
+- 🎵 **Local Library Scan**: Easily import a folder of music using standard web APIs.
+- 🎨 **Glassmorphic Design System**: Supports both dark and light modes, smooth gradients, and beautiful animations.
+- 📉 **Real-Time Visualizer**: Interactive canvas drawing glowing frequency bars.
+- 🎚️ **5-Band Equalizer**: Adjust acoustic gains (60Hz, 230Hz, 910Hz, 4kHz, 14kHz) with built-in presets (Rock, Pop, Jazz, Classical).
+- ⏱️ **Sleep Timer**: Setup custom timers to stop audio, including a premium **5-second soft volume fade-out**.
+- 📂 **Media Management**: Create custom playlists, mark favorite tracks, and search.
+- 📱 **Media Session API**: Complete background audio playback and macOS lock screen / control center media key support.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Core**: React, TypeScript, Vite
+- **Styling**: Custom CSS Variables, Glassmorphism
+- **Audio Engine**: Web Audio API, HTML5 Audio
+- **Metadata**: jsmediatags
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started Locally
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone or download the repository files.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your web browser.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deploying to GitHub Pages (Automatic)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+We have configured a GitHub Actions workflow that builds and deploys this app to GitHub Pages automatically on every push to the `main` branch.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Deployment Instructions:
+
+1. **Create a GitHub Repo**:
+   - Go to [GitHub](https://github.com) and create a new public repository (e.g. named `ply`).
+   - Do **NOT** initialize it with a README, gitignore, or license.
+
+2. **Add Remote & Push**:
+   Run the following commands in your project folder:
+   ```bash
+   # Add your repository as the origin remote (replace <username> and <repository>)
+   git remote add origin https://github.com/<username>/<repository>.git
+
+   # Push the main branch to GitHub
+   git push -u origin main
+   ```
+
+3. **Configure Pages Settings on GitHub**:
+   - On GitHub, navigate to your repository's page.
+   - Go to **Settings** > **Pages** (in the left-hand menu).
+   - Under **Build and deployment** > **Source**, change the dropdown from **Deploy from a branch** to **GitHub Actions**.
+
+4. **Enjoy**:
+   The GitHub Actions workflow will automatically run. Once completed, your app will be live at:
+   `https://<your-username>.github.io/<repository-name>/`

@@ -1,8 +1,15 @@
-# PLY - Premium Glassmorphic Web Audio Player
+<p align="center">
+  <img src="public/ply_logo.png" width="120" height="120" style="border-radius: 24px;" alt="PLY Logo" />
+</p>
+
+<h1 align="center">PLY - Premium Glassmorphic Web Audio Player</h1>
 
 PLY is a high-fidelity, premium glassmorphic local audio player running entirely in the browser. Designed with modern aesthetics in mind, it allows users to scan local folders for audio files (`.mp3`, `.wav`), parse ID3 metadata, and play music with responsive canvas visualizers, custom equalizers, and media key integrations.
 
-![PLY App Mockup](https://raw.githubusercontent.com/github/docs/main/assets/images/help/repository/repo-creation.png) *Note: Replace with your actual screenshot!*
+<p align="center">
+  <img src="public/music_player_ui.png" width="100%" max-width="800px" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" alt="PLY App Mockup" />
+</p>
+
 
 ## Key Features
 
